@@ -103,6 +103,7 @@ video { filter: grayscale(1); mix-blend-mode: overlay;}
   padding-top: 5%;
   width: 100%;
   text-align: center;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .block-1 {
