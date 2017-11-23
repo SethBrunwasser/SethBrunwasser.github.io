@@ -106,10 +106,16 @@ video { filter: grayscale(1); mix-blend-mode: overlay;}
   font-family: 'Open Sans', sans-serif;
 }
 
-.block-1 {
+.block-home {
   z-index: -20000;
   padding-top: 400px;
   padding-bottom: 50px;
   font-family: 'Open Sans', sans-serif;
   font-size: 20px;
+}
+
+.block {
+  padding-bottom: 50px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 20px; 
 }
