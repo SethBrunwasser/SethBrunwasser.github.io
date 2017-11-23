@@ -108,5 +108,8 @@ video { filter: grayscale(1); mix-blend-mode: overlay;}
 
 .block-1 {
   z-index: -20000;
-  padding-top: 500px;
+  padding-top: 400px;
+  padding-bottom: 50px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 20px;
 }
