@@ -75,15 +75,6 @@ head {
 }
 
 
-.jumbotron {
-  opacity: .6;
-}
-
-.container-fluid {
-    padding-top: 70px;
-    padding-bottom: 70px;
-}
-
 .navbar {
   padding-top: 15px;
   padding-bottom: 15px;
@@ -99,4 +90,20 @@ head {
 
 .navbar-brand {
   letter-spacing: 1px;
+}
+
+
+.jumbotron {
+  opacity: .6;
+  border: 5px 5px 5px 5px;
+}
+
+.container-fluid {
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+
+.block-1 {
+  z-index: -20000;
+  padding-top: 1000px;
 }
