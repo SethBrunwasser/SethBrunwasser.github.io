@@ -137,5 +137,6 @@ video { filter: grayscale(1); mix-blend-mode: overlay;}
 
 .realestate-analysis input {
   float: right;
+  margin-right: 50%;
 }
 
