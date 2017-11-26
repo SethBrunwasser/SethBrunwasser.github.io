@@ -10,16 +10,19 @@ $(document).ready(function(){
 
 //Calculate RoR - 10 Years
 function TenRoR(){
-	
+
+	return "";
 }
 
 
 //Calculate RoR - 20 Years
 function TwentyRoR(){
 
+	return "";
 }
 
 //Calculate RoR - 30 Years
 function ThirtyRoR(){
 
+	return "";
 }
