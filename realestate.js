@@ -2,15 +2,15 @@
 
 $(document).ready(function(){
 	$("input").change(function(){
-			$("#ror-10").val("ror 10 works");
-			$("#ror-20").val("ror 20 works");
-			$("#ror-30").val("ror 30 works");
+			$("#ror-10").val(tenRoR());
+			$("#ror-20").val(TwentyRoR());
+			$("#ror-30").val(ThirtyRoR());
 	})
 })
 
 //Calculate RoR - 10 Years
 function TenRoR(){
-
+	
 }
 
 
@@ -21,5 +21,5 @@ function TwentyRoR(){
 
 //Calculate RoR - 30 Years
 function ThirtyRoR(){
-	
+
 }

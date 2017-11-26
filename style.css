@@ -163,8 +163,8 @@ video { filter: grayscale(1); mix-blend-mode: overlay; width: 100%;}
   
 }
 
-.column-3 {
-  padding-top: 10px;
+.column-2 {
+  display: inline-grid;
   float: left;
   width: 50%;
 }

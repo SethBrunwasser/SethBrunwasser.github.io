@@ -49,36 +49,40 @@
 			<div class="realestate-analysis">
 				<form>
 					<div class="column">
-						<label>Purchase Price:<input type="text" name="price" placeholder="100,000"></label>
-						<label>Closing Costs:<input type="text" name="closing-costs" placeholder="2,000"></label>
-						<label>Estimated Repair Costs:<input type="text" name="repair-costs" placeholder="10,000"></label>
-						<label>After Repair Value:<input type="text" name="after-repair-value" placeholder="120,000"></label>
-						<label>Annual Property Taxes:<input type="text" name="property-taxes" placeholder="2%"></label>
+						<label>Purchase Price:<input type="text" id="price" name="price" placeholder="100,000"></label>
+						<label>Closing Costs:<input type="text" id="closing-costs" name="closing-costs" placeholder="2,000"></label>
+						<label>Estimated Repair Costs:<input type="text" id="repair-costs" name="repair-costs" placeholder="10,000"></label>
+						<label>After Repair Value:<input type="text" id="after-repair-value" name="after-repair-value" placeholder="120,000"></label>
+						<label>Annual Property Taxes:<input type="text" id="property-taxes" name="property-taxes" placeholder="2%"></label>
 						<br>
-						<label>Total Gross Monthly Rent:<input type="text" name="monthly-rent" placeholder="1,800"></label>
+						<label>Total Gross Monthly Rent:<input type="text" id="monthly-rent" name="monthly-rent" placeholder="1,800"></label>
 						<br>
 						<label>Speculations:</label>
-						<label>Annual Income Growth (%):<input type="text" name="annual-income-growth" placeholder="2%"></label>
-						<label>Annual Property Value Growth (%):<input type="text" name="annual-pv-growth" placeholder="3%"></label>
-						<label>Annual Expenses Growth (%):<input type="text" name="annual-expenses-growth" placeholder="3%"></label>
-						<label>Sales Expenses (%):<input type="text" name="sales-expenses" placeholder="3%"><label><br><br>
+						<label>Annual Income Growth (%):<input type="text" id="annual-income-growth" name="annual-income-growth" placeholder="2%"></label>
+						<label>Annual Property Value Growth (%):<input type="text" id="annual-pv-growth" name="annual-pv-growth" placeholder="3%"></label>
+						<label>Annual Expenses Growth (%):<input type="text" id="annual-expenses-growth" name="annual-expenses-growth" placeholder="3%"></label>
+						<label>Sales Expenses (%):<input type="text" id="sales-expenses" name="sales-expenses" placeholder="3%"><label><br><br>
 						<label>Expenses:</label>
-						<label>Electricity:<input type="text" name="electricity" placeholder="$120.00"></label>
-						<label>Water & Sever:<input type="text" name="water-sewer" placeholder="$40.00"></label>
-						<label>Garbage:<input type="text" name="garbage" placeholder="$0"></label>
-						<label>HOAs:<input type="text" name="hoas" placeholder="$30"></label>
-						<label>Monthly Insurance:<input type="text" name="insurance" placeholder="$35"></label>
-						<label>Property Taxes (%):<input type="text" name="property-taxes" placeholder="1%"></label>
-						<label>Vacancy (%):<input type="text" name="vacancy" placeholder="5%"></label>
-						<label>Repairs & Maintenance:<input type="text" name="maintenance" placeholder="5%"></label>
-						<label>Management Fees:<input type="text" name="management" placeholder="$100"></label>
-						<label>Down Payment (%):<input type="text" name="downpayment" placeholder="20%"></label>
-						<label>Loan Interest Rate (%):<input type="text" name="loan-interest-rate" placeholder="4%"></label>
-						<label>Amortized Over How Many Years?<input type="text" name="amortized-length" placeholder="30 years"></label>
+						<label>Electricity:<input type="text" id="electricity" name="electricity" placeholder="$120.00"></label>
+						<label>Water & Sever:<input type="text" id="water-sewer" name="water-sewer" placeholder="$40.00"></label>
+						<label>Garbage:<input type="text" id="garbage" name="garbage" placeholder="$0"></label>
+						<label>HOAs:<input type="text" id="hoas" name="hoas" placeholder="$30"></label>
+						<label>Monthly Insurance:<input type="text" id="insurance" name="insurance" placeholder="$35"></label>
+						<label>Property Taxes (%):<input type="text" id="property-taxes" name="property-taxes" placeholder="1%"></label>
+						<label>Vacancy (%):<input type="text" id="vacancy" name="vacancy" placeholder="5%"></label>
+						<label>Repairs & Maintenance:<input type="text" id="maintenance" name="maintenance" placeholder="5%"></label>
+						<label>Management Fees:<input type="text" id="management" name="management" placeholder="$100"></label>
+						<label>Down Payment (%):<input type="text" id="downpayment" name="downpayment" placeholder="20%"></label>
+						<label>Loan Interest Rate (%):<input type="text" id="loan-interest-rate" name="loan-interest-rate" placeholder="4%"></label>
+						<label>Amortized Over How Many Years?<input type="text" id="amortized-length" name="amortized-length" placeholder="30 years"></label>
 						<br>
 					</div>
 					<label>Analysis:</label>
-					<div class="column-3">
+					<div class="column-2">
+						<label>Capitalization Rate:<input type="text" id="cap-rate" name="cap-rate" readonly></label>
+						<label>Cash-on-Cash Return:<input type="text" id="Cash-on-Cash" name="Cash-on-Cash" readonly></label>
+						<label>5 Year Equity:<input type="text" id="equity-5" name="equity-5" readonly></label>
+
 						<label>RoR 10 Years:<input type="text" id="ror-10" name="ror-10" readonly></label>
 						<label>RoR 20 Years:<input type="text" id="ror-20" name="ror-20" readonly></label>
 						<label>RoR 30 Years:<input type="text" id="ror-30" name="ror-30" readonly></label>
