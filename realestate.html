@@ -5,6 +5,8 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script type="text/javascript" src="realestate.js"></script>
 
 	<!-- Navbar -->
 	<title>Seth</title>
@@ -59,7 +61,7 @@
 						<label>Annual Income Growth (%):<input type="text" name="annual-income-growth" placeholder="2%"></label>
 						<label>Annual Property Value Growth (%):<input type="text" name="annual-pv-growth" placeholder="3%"></label>
 						<label>Annual Expenses Growth (%):<input type="text" name="annual-expenses-growth" placeholder="3%"></label>
-						<label>Sales Expenses (%):<input type="text" name="sales-expenses" placeholder="3%"><label><br>
+						<label>Sales Expenses (%):<input type="text" name="sales-expenses" placeholder="3%"><label><br><br>
 						<label>Expenses:</label>
 						<label>Electricity:<input type="text" name="electricity" placeholder="$120.00"></label>
 						<label>Water & Sever:<input type="text" name="water-sewer" placeholder="$40.00"></label>
@@ -73,7 +75,13 @@
 						<label>Down Payment (%):<input type="text" name="downpayment" placeholder="20%"></label>
 						<label>Loan Interest Rate (%):<input type="text" name="loan-interest-rate" placeholder="4%"></label>
 						<label>Amortized Over How Many Years?<input type="text" name="amortized-length" placeholder="30 years"></label>
-
+						<br>
+					</div>
+					<label>Analysis:</label>
+					<div class="column-3">
+						<label>RoR 10 Years:<input type="text" id="ror-10" name="ror-10" readonly></label>
+						<label>RoR 20 Years:<input type="text" id="ror-20" name="ror-20" readonly></label>
+						<label>RoR 30 Years:<input type="text" id="ror-30" name="ror-30" readonly></label>
 					</div>
 				</form>
 			</div>

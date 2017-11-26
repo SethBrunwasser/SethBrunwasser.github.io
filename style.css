@@ -134,9 +134,14 @@ video { filter: grayscale(1); mix-blend-mode: overlay;}
   padding-top: 10px;
 }
 
-.realestate-analysis div {
+.realestate-analysis .column {
   width: 100%;
   column-count: 2;
+}
+
+.realestate-analysis .column-3 {
+  width: 100%;
+  column-count: 3;
 }
 
 .realestate-analysis label {
@@ -154,7 +159,8 @@ video { filter: grayscale(1); mix-blend-mode: overlay;}
   
 }
 
-.column-two {
-  float: right;
+.column-3 {
+  padding-top: 10px;
+  float: left;
   width: 50%;
 }
