@@ -130,15 +130,8 @@ video { filter: grayscale(1); mix-blend-mode: overlay;}
   font-size: 20px; 
 }
 
-.column {
-  float: left;
-  width: 50%;
-  height: 100%;
-}
-
-.column-two {
-  float: right;
-  width: 50%;
+.realestate-analysis {
+  padding-top: 10px;
 }
 
 .realestate-analysis div {
@@ -155,3 +148,13 @@ video { filter: grayscale(1); mix-blend-mode: overlay;}
   float: right;
 }
 
+.column {
+  float: left;
+  width: 50%;
+  
+}
+
+.column-two {
+  float: right;
+  width: 50%;
+}
