@@ -130,6 +130,22 @@ video { filter: grayscale(1); mix-blend-mode: overlay;}
   font-size: 20px; 
 }
 
+.column {
+  float: left;
+  width: 50%;
+  height: 100%;
+}
+
+.column-two {
+  float: right;
+  width: 50%;
+}
+
+.realestate-analysis div {
+  width: 100%;
+  column-count: 2;
+}
+
 .realestate-analysis label {
   display: block;
   margin-bottom: 10px;
@@ -137,6 +153,5 @@ video { filter: grayscale(1); mix-blend-mode: overlay;}
 
 .realestate-analysis input {
   float: right;
-  margin-right: 50%;
 }
 
