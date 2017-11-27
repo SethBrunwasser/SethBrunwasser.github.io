@@ -3,6 +3,7 @@
 $(document).ready(function(){
 	$("input").change(function(){
 			$("#cap-rate").val(yearOneCapRate());
+			$("#Cash-on-Cash").val(yearOneCashOnCash())
 			$("#ror-10").val(TenRoR());
 			$("#ror-20").val(TwentyRoR());
 			$("#ror-30").val(ThirtyRoR());
@@ -20,25 +21,82 @@ function getInput(id) {
 	return num;
 }
 
+//Return Property Value
+function propertyValue(){
+	return getInput("#after-repair-value");
+}
+
+function purchasePrice(){
+	var price = getInput("#price");
+	return price;
+}
+
+//Return Down Payment
+function downPayment(){
+	var downpayment = purchasePrice() * getInput("#downpayment");
+	return downpayment;
+}
+
+function loanLength(){
+	var length = getInput("#amortized-length");
+	return length;
+}
+
+//Return Monthly Mortgage
+function monthlyMortgage(){
+	var numOfPayments = loanLength()*12;
+	var rate = getInput("#loan-interest-rate")/(numOfPayments * 100);
+	var principle = purchasePrice() - downPayment();
+	var monthlyMortgagePayment = principle * ((rate * Math.pow(1+rate, numOfPayments))/(Math.pow(1+rate, numOfPayments)-1));
+
+	console.log(monthlyMortgagePayment);
+
+	return monthlyMortgagePayment;
+}
+
+//Return Initial Investment
+function initialInvestment(){
+	var initialInvestment = downPayment() + getInput("#closing-costs");
+	return initialInvestment;
+}
+
 //Return Total Operating Income
-function TotalOperatingIncome(){
+function TotalMonthlyOperatingIncome(){
 	var operatingIncome = 12*getInput("#monthly-rent");
 	return operatingIncome;
 }
 
 //Return Total Operating Expenses
-function TotalOperatingExpenses(){
+function TotalMonthlyOperatingExpenses(){
 	var monthlyToe = getInput("#electricity") + getInput("#water-sewer")
 				+ getInput("#garbage") + getInput("#hoas")
 				+ getInput("#insurance") + getInput("#management");
-	var monthlyPropertyTax = (getInput("#price") * getInput("#property-taxes")) / 12;
+	var monthlyPropertyTax = (getInput("#after-repair-value") * getInput("#property-taxes")) / 12;
 	return monthlyToe + monthlyPropertyTax;
+}
+
+//Return Net Operating Income
+function netMonthlyOperatingIncome(){
+	return TotalMonthlyOperatingIncome() - TotalMonthlyOperatingExpenses();
+}
+
+//Return Cashflow
+function monthlyCashFlow(){
+	var monthlyCashflow = netMonthlyOperatingIncome() - monthlyMortgage();
+	return monthlyCashflow;
+}
+
+//Return Year One Cash on Cash Return
+function yearOneCashOnCash(){
+	var yearOneCashOnCash = monthlyCashFlow()/initialInvestment()
+	return yearOneCashOnCash;
 }
 
 //Return Cap Rate
 function yearOneCapRate(){
-	return (TotalOperatingIncome()-TotalOperatingExpenses())/TotalOperatingExpenses();
+	return netMonthlyOperatingIncome()/propertyValue();
 }
+
 
 
 //Calculate RoR - 10 Years
