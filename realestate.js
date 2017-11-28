@@ -14,6 +14,15 @@ $(document).ready(function(){
 function getInput(id) {
 	var val = $(id).val();
 	if(val){
+		if(val.indexOf("%") > -1){
+			val = val.replace("%", "");
+		}
+		if(val.indexOf("$") > -1){
+			val = val.replace("$", "");
+		}
+		if(val.indexOf(",") > -1){
+			val = val.replace(",", "");
+		}
 		var num = parseInt(val);
 	} else {
 		var num = 0;
