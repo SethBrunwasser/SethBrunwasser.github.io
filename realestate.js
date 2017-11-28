@@ -33,7 +33,7 @@ function purchasePrice(){
 
 //Return Down Payment
 function downPayment(){
-	var downpayment = purchasePrice() * getInput("#downpayment");
+	var downpayment = purchasePrice() * (getInput("#downpayment") / 100);
 	return downpayment;
 }
 
@@ -62,7 +62,7 @@ function initialInvestment(){
 
 //Return Total Operating Income
 function TotalMonthlyOperatingIncome(){
-	var operatingIncome = 12*getInput("#monthly-rent");
+	var operatingIncome = getInput("#monthly-rent");
 	return operatingIncome;
 }
 
@@ -88,7 +88,7 @@ function monthlyCashFlow(){
 
 //Return Year One Cash on Cash Return
 function yearOneCashOnCash(){
-	var yearOneCashOnCash = monthlyCashFlow()/initialInvestment()
+	var yearOneCashOnCash = monthlyCashFlow()/initialInvestment();
 	return yearOneCashOnCash;
 }
 
