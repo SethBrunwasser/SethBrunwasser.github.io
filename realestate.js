@@ -2,12 +2,12 @@
 
 $(document).ready(function(){
 	$("input").change(function(){
-			$("#cap-rate").val(yearOneCapRate.formatPercent());
-			$("#Cash-on-Cash").val(yearOneCashOnCash.formatPercent())
+			$("#cap-rate").val(yearOneCapRate);
+			$("#Cash-on-Cash").val(yearOneCashOnCash);
 			$("#equity-5").val(equity(5).formatMoney(2));
-			$("#ror-10").val(TenRoR().formatPercent());
-			$("#ror-20").val(TwentyRoR().formatPercent());
-			$("#ror-30").val(ThirtyRoR().formatPercent());
+			$("#ror-10").val(TenRoR());
+			$("#ror-20").val(TwentyRoR());
+			$("#ror-30").val(ThirtyRoR());
 	})
 })
 
@@ -42,11 +42,6 @@ var n = this,
    return s + (j ? i.substr(0, j) + t : "") + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + t) + (c ? d + Math.abs(n - i).toFixed(c).slice(2) : "");
  };
 
-Number.prototype.formatPercent = function(){
-	var n = this;
-	return (n * 100).toString().concat("%");
-}
-
 
 //Input variables
 var propertyValue = function() {return getInput("#after-repair-value");}
@@ -56,19 +51,21 @@ var loanLength = function() {return getInput("#amortized-length");}
 var loanInterestRate = function() {return getInput("#loan-interest-rate");}
 var closingCosts = function() {return getInput("#closing-costs");}
 var monthlyRent = function() {return getInput("#monthly-rent");}
-var pvGrowth = function() {return getInput("#annual-pv-growth");}
+var pvGrowth = function() {return getInput("#annual-pv-growth")/100;}
+var incomeGrowth = function() {return getInput("#annual-income-growth")/100}
+var expensesGrowth = function() {return getInput("#annual-expenses-growth")/100}
 //Return Monthly Mortgage
 var monthlyMortgage = function() {
 	var numOfPayments = loanLength()*12*100;
 	var rate = loanInterestRate()/numOfPayments;
-	var principle = purchasePrice() - downPayment();
+	var principle = purchasePrice() - (downPayment() * purchasePrice());
 	var monthlyMortgagePayment = principle * ((rate * Math.pow(1+rate, numOfPayments))/(Math.pow(1+rate, numOfPayments)-1));
 	return monthlyMortgagePayment;
 }
 
 //Return Initial Investment
 function initialInvestment(){
-	var initialInvestment = downPayment() + closingCosts();
+	var initialInvestment = (downPayment() * purchasePrice()) + closingCosts();
 	return initialInvestment;
 }
 
@@ -84,24 +81,25 @@ var netMonthlyOperatingIncome = function() { return monthlyRent() - monthlyOpera
 
 //Return Cashflow
 var monthlyCashFlow = function(){ return netMonthlyOperatingIncome() - monthlyMortgage();}
-
+var yearlyCashFlow = function(){ return monthlyCashFlow()*12;}
 //Return Year One Cash on Cash Return
-var yearOneCashOnCash = function(){ return monthlyCashFlow()/initialInvestment();}
+var yearOneCashOnCash = function(){ return (monthlyCashFlow()/initialInvestment()).toLocaleString(undefined,{style: 'percent', minimumFractionDigits:2});}
 
 //Return Cap Rate
-var yearOneCapRate = function(){return netMonthlyOperatingIncome()/propertyValue();}
+var yearOneCapRate = function(){return (netMonthlyOperatingIncome()/propertyValue()).toLocaleString(undefined,{style: 'percent', minimumFractionDigits:2});}
 
 //equity calculator
 function equity(year){
 	//Property Value * (1 + Appreciation Rate)^year
-	var rate = pvGrowth() / 100;
+	var rate = pvGrowth();
 	var equityOneYear = propertyValue() * Math.pow(1 + rate, year);
 	return equityOneYear;
 }
 
-//Calculate RoR - 10 Years
-function TenRoR(){
-	price = getInput("#price")
+//Calculate ROI - 10 Years
+function TenROI(){
+	// Cashflow + Equity - initialInvestment/InitialInvestment
+	var yearTenCashFlow = yearlyCashFlow()*Math.pow(1+incomeGrowth(), 10)
 	return price;
 }
 
