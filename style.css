@@ -178,7 +178,8 @@ video { filter: grayscale(1); mix-blend-mode: overlay; width: 100%;}
 }
 
 .indepth-analysis {
-  margin: 2%;
+  margin: 5%;
+  position: relative;
   font-size: 18px;
 }
 .indepth-analysis label {

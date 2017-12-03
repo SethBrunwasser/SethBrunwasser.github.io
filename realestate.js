@@ -1,5 +1,15 @@
 // Real Estate Analysis calculator
 
+$.fn.isInViewport = function() {
+    var elementTop = $(this).offset().top;
+    var elementBottom = elementTop + $(this).outerHeight();
+
+    var viewportTop = $(window).scrollTop();
+    var viewportBottom = viewportTop + $(window).height();
+
+    return elementBottom > viewportTop && elementTop < viewportBottom;
+};
+
 $(document).ready(function(){
 
 	// Quick Analysis
@@ -12,27 +22,24 @@ $(document).ready(function(){
 			$("#ror-10").val(TenRoR())
 	})
 
-	// In-Depth Analysis
-	$(window).scroll(function() {
-	   var hT = $('#yearThirty-mortgage-interest').offset().top,
-	       hH = $('#yearThirty-mortgage-interest').outerHeight(),
-	       wH = $(window).height(),
-	       wS = $(this).scrollTop();
-	   if (wS > (hT+hH-wH)){
-	       // Perform update
-	       $(".wodry").wodry({
-				animation: 'rotateX',
-				delay: 1000,
-				animationDuration: 800
-	       })
-	   }
+
+
+
+	// Closer Look animation
+	$("#closer-look").hide()
+	$(window).on('resize scroll', function() {
+	    if ($('#tax-benefits-header').isInViewport()) {
+	    	$("#closer-look").fadeIn({queue: false, duration: 'slow'});
+	        $("#closer-look").animate({
+			    width: "70%",
+			    marginLeft: "0.3in",
+			    fontSize: "2em",
+			    borderWidth: "10px"
+			 }, 2000 );
+	        $(this).off('scroll');
+	    }
 	});
 
-	$(".wodry").wodry({
-		animation: 'rotateX',
-		delay: 1000,
-		animationDuration: 800
-   })
 
 
 })
