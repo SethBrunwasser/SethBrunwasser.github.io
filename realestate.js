@@ -1,15 +1,42 @@
 // Real Estate Analysis calculator
 
 $(document).ready(function(){
+
+	// Quick Analysis
 	$("input").change(function(){
+			//$("#yearOne-monthly-cashflow").text("123");
+			ReplaceCellContent("yearOne-monthly-cashflow", "1234");
 			$("#cap-rate").val(yearOneCapRate);
 			$("#Cash-on-Cash").val(yearOneCashOnCash);
 			$("#equity-5").val(equity(5).formatMoney(2));
-			$("#ror-10").val(TenRoR());
-			$("#ror-20").val(TwentyRoR());
-			$("#ror-30").val(ThirtyRoR());
+			$("#ror-10").val(TenRoR())
 	})
+
+	// In-Depth Analysis
+	$(window).scroll(function() {
+	   var hT = $('#yearThirty-mortgage-interest').offset().top,
+	       hH = $('#yearThirty-mortgage-interest').outerHeight(),
+	       wH = $(window).height(),
+	       wS = $(this).scrollTop();
+	   if (wS > (hT+hH-wH)){
+	       // Perform update
+	       $(".wodry").wodry({
+				animation: 'rotateX',
+				delay: 1000,
+				animationDuration: 800
+	       })
+	   }
+	});
+
+	$(".wodry").wodry({
+		animation: 'rotateX',
+		delay: 1000,
+		animationDuration: 800
+   })
+
+
 })
+
 
 //Get value from id
 function getInput(id) {
@@ -30,6 +57,7 @@ function getInput(id) {
 	}
 	return num;
 }
+
 
 Number.prototype.formatMoney = function(c, d, t){
 var n = this, 
