@@ -108,6 +108,10 @@ video { filter: grayscale(1); mix-blend-mode: overlay; width: 100%;}
   opacity: .5;
 }
 
+.navbar-brand iframe:hover {
+  opacity: .5;
+}
+
 
 .jumbotron {
   border: 5px 5px 5px 5px;
