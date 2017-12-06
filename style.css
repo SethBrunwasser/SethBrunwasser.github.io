@@ -202,3 +202,16 @@ video { filter: grayscale(1); mix-blend-mode: overlay; width: 100%;}
   font-weight: lighter;
   text-decoration: underline;
 }
+
+.resume-contact p {
+  margin-bottom: 5px;
+}
+
+.resume-contact a {
+  color: #000000;
+}
+
+.resume-contact a:hover {
+  text-decoration: none;
+  opacity: .5;
+}
