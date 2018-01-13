@@ -1,3 +1,3 @@
-# SethBrunwasser.me
+# SethBrunwasser.github.io
 
 Personal Website
