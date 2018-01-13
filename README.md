@@ -1,2 +1,3 @@
-# SethBrunwasser.github.io
-Personal Website - Not Completed
+# SethBrunwasser.me
+
+Personal Website
